@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FaceRecognitionSystem
+{
+    public partial class SearchForm : Form
+    {
+        private DBRecord dbrecord = new DBRecord();
+
+        private List<List<Object>> recordCellChange = new List<List<object>>();
+
+        public SearchForm()
+        {
+            InitializeComponent();
+            displayData();
+        }
+
+        public void displayData()
+        {
+            List<DBRecord> data = DBRecord.GetUsers();
+            if (data.Count <= 0)
+                dataGridView1.DataSource = data;
+            else
+                foreach (DBRecord dbs in data)
+                    dataGridView1.DataSource = data;
+        }
+    }
+}
