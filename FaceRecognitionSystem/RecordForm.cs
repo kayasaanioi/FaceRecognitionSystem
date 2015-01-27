@@ -80,5 +80,30 @@ namespace FaceRecognitionSystem
         {
             dataGridView1.CurrentRow.Selected = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                    string a = Convert.ToString(selectedRow.Cells[0].Value);
+
+                    MySqlConnection con = null;
+                    con = DBConnection.GetDBConnection();
+
+                    MySqlCommand cmd = new MySqlCommand(@"DELETE FROM crecord WHERE id = " + a + "", con);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    MessageBox.Show("Successfully Deleted Record", "Login", MessageBoxButtons.OK);
+                    displayData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
