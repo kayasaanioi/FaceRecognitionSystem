@@ -37,13 +37,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wantedListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wantedListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liveStreamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.camera1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.camera2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.camera3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wantedListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wantedListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBoxFrameGrabber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -120,31 +120,9 @@
             // addRecordToolStripMenuItem
             // 
             this.addRecordToolStripMenuItem.Name = "addRecordToolStripMenuItem";
-            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem.Text = "Add Record";
             this.addRecordToolStripMenuItem.Click += new System.EventHandler(this.addRecordToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wantedListsToolStripMenuItem,
-            this.wantedListToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "&View";
-            // 
-            // wantedListToolStripMenuItem
-            // 
-            this.wantedListToolStripMenuItem.Name = "wantedListToolStripMenuItem";
-            this.wantedListToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.wantedListToolStripMenuItem.Text = "Recorded Videos";
-            // 
-            // wantedListsToolStripMenuItem
-            // 
-            this.wantedListsToolStripMenuItem.Name = "wantedListsToolStripMenuItem";
-            this.wantedListsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.wantedListsToolStripMenuItem.Text = "Wanted Lists";
-            this.wantedListsToolStripMenuItem.Click += new System.EventHandler(this.wantedListsToolStripMenuItem_Click);
             // 
             // liveStreamsToolStripMenuItem
             // 
@@ -159,21 +137,43 @@
             // camera1ToolStripMenuItem
             // 
             this.camera1ToolStripMenuItem.Name = "camera1ToolStripMenuItem";
-            this.camera1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.camera1ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.camera1ToolStripMenuItem.Text = "Camera 1";
             this.camera1ToolStripMenuItem.Click += new System.EventHandler(this.camera1ToolStripMenuItem_Click_1);
             // 
             // camera2ToolStripMenuItem
             // 
             this.camera2ToolStripMenuItem.Name = "camera2ToolStripMenuItem";
-            this.camera2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.camera2ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.camera2ToolStripMenuItem.Text = "Camera 2";
             // 
             // camera3ToolStripMenuItem
             // 
             this.camera3ToolStripMenuItem.Name = "camera3ToolStripMenuItem";
-            this.camera3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.camera3ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.camera3ToolStripMenuItem.Text = "Camera 3";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wantedListsToolStripMenuItem,
+            this.wantedListToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "&View";
+            // 
+            // wantedListsToolStripMenuItem
+            // 
+            this.wantedListsToolStripMenuItem.Name = "wantedListsToolStripMenuItem";
+            this.wantedListsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.wantedListsToolStripMenuItem.Text = "Wanted Lists";
+            this.wantedListsToolStripMenuItem.Click += new System.EventHandler(this.wantedListsToolStripMenuItem_Click);
+            // 
+            // wantedListToolStripMenuItem
+            // 
+            this.wantedListToolStripMenuItem.Name = "wantedListToolStripMenuItem";
+            this.wantedListToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.wantedListToolStripMenuItem.Text = "Recorded Videos";
             // 
             // MainForm
             // 
@@ -186,6 +186,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ImageBoxFrameGrabber);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";

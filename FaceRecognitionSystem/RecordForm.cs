@@ -96,7 +96,7 @@ namespace FaceRecognitionSystem
 
                     MySqlCommand cmd = new MySqlCommand(@"DELETE FROM crecord WHERE id = " + a + "", con);
                     MySqlDataReader dr = cmd.ExecuteReader();
-                    MessageBox.Show("Successfully Deleted Record", "Login", MessageBoxButtons.OK);
+                    MessageBox.Show("Successfully Deleted Record", "Delete", MessageBoxButtons.OK);
                     displayData();
                 }
             }
@@ -104,6 +104,55 @@ namespace FaceRecognitionSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Text == "ID")
+            {
+                MySqlConnection con = null;
+                con = DBConnection.GetDBConnection();
+
+                sda = new MySqlDataAdapter(@"SELECT id,fname,lname,allias,gender,age,nation,religion,status,offense,btype,tatoo,eye,skin,hair,address FROM crecord WHERE id LIKE '" + textBox1.Text + "%' ", con);
+
+                dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }else if(comboBox1.Text == "FIRST NAME")
+            {
+                MySqlConnection con = null;
+                con = DBConnection.GetDBConnection();
+
+                sda = new MySqlDataAdapter(@"SELECT id,fname,lname,allias,gender,age,nation,religion,status,offense,btype,tatoo,eye,skin,hair,address FROM crecord WHERE fname LIKE '" + textBox1.Text + "%' ", con);
+
+                dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }else if(comboBox1.Text == "LAST NAME")
+            {
+                MySqlConnection con = null;
+                con = DBConnection.GetDBConnection();
+
+                sda = new MySqlDataAdapter(@"SELECT id,fname,lname,allias,gender,age,nation,religion,status,offense,btype,tatoo,eye,skin,hair,address FROM crecord WHERE lname LIKE '" + textBox1.Text + "%' ", con);
+
+                dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }else if(comboBox1.Text == "OFFENSE")
+            {
+                MySqlConnection con = null;
+                con = DBConnection.GetDBConnection();
+
+                sda = new MySqlDataAdapter(@"SELECT id,fname,lname,allias,gender,age,nation,religion,status,offense,btype,tatoo,eye,skin,hair,address FROM crecord WHERE OFFENSE LIKE '" + textBox1.Text + "%' ", con);
+
+                dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            
         }
     }
 }
